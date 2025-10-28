@@ -57,8 +57,7 @@ RECAPTCHA_SECRET = os.getenv("RECAPTCHA_SECRET", "")
 SUBJECT_PREFIX = "[NoorVerse Contact] "
 
 # Basic sanitization helpers
-HEADER_INJECTION_RE = re.compile(r"[\r\n]|
-||%0a|%0d", re.IGNORECASE)
+HEADER_INJECTION_RE = re.compile(r"(?:\r|\n|%0a|%0d)+", re.IGNORECASE)
 
 def sanitize_text(value: str) -> str:
     value = (value or "").strip()
