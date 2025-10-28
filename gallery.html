@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f3d2e">
+  <meta name="description" content="NoorVerse — Gallery of mosques, calligraphy, and peaceful art.">
+  <title>NoorVerse — Gallery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="./assets/images/noorverse-logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/images/noorverse-logo.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NoorVerse">
+  <meta property="og:title" content="NoorVerse — Gallery">
+  <meta property="og:description" content="Gallery of mosques, calligraphy, and peaceful art.">
+  <meta property="og:image" content="./assets/images/noorverse-logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NoorVerse — Gallery">
+  <meta name="twitter:description" content="Gallery of mosques, calligraphy, and peaceful art.">
+  <meta name="twitter:image" content="./assets/images/noorverse-logo.svg">
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <audio id="bg-audio" preload="none" loop>
+    <source src="./assets/audio/soft-recitation.mp3" type="audio/mpeg">
+  </audio>
+
+  <header class="site-header" data-elevate>
+    <div class="container nav-wrap">
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="NoorVerse Home">
+          <img class="brand-logo" src="./assets/images/noorverse-logo.svg" alt="NoorVerse" />
+          <span class="brand-text">NoorVerse</span>
+        </a>
+      </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+      <nav class="nav" id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="quran.html">Quran & Hadith</a>
+        <a href="articles.html">Articles</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+        <div class="actions">
+          <button class="audio-toggle" id="audio-toggle" aria-pressed="false" aria-label="Toggle background recitation">
+            <span class="icon" aria-hidden="true">🔊</span>
+            <span class="label">Sound</span>
+          </button>
+          <div class="player-controls" aria-label="Recitation playlist controls">
+            <button class="player-btn" id="prev-track" aria-label="Previous track">⏮</button>
+            <button class="player-btn" id="play-pause" aria-label="Play/Pause">▶</button>
+            <button class="player-btn" id="next-track" aria-label="Next track">⏭</button>
+            <span class="track-title" id="track-title"></span>
+          </div>
+          <button class="mode-toggle" id="mode-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌗</button>
+          <button class="player-btn" id="font-dec" aria-label="Decrease font size">A−</button>
+          <button class="player-btn" id="font-inc" aria-label="Increase font size">A+</button>
+        </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="gallery" class="section alt">
+      <div class="container">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Kaaba-Masjid-al-Haram.jpeg" alt="Kaaba — Masjid al-Haram" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Kaaba — Masjid al-Haram</h3><p>Makkah, Saudi Arabia. Source: Local Gallery</p></div>
+          </div>
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Masjid an-Nabawi.jpeg" alt="Masjid an-Nabawi" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Masjid an-Nabawi</h3><p>Madinah, Saudi Arabia. Source: Local Gallery</p></div>
+          </div>
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Quran-and-Tasbih.jpg" alt="Quran and Tasbih" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Quran and Tasbih</h3><p>Prayer and remembrance. Source: Local Gallery</p></div>
+          </div>
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Bismillah-Calligraphy.png" alt="Bismillah — Calligraphy" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Bismillah — Calligraphy</h3><p>Arabic calligraphy art. Source: Local Gallery</p></div>
+          </div>
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Muhammad-ﷺ-Calligraphy.jpeg" alt="Muhammad ﷺ — Calligraphy" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Muhammad ﷺ — Calligraphy</h3><p>Peace be upon him. Source: Local Gallery</p></div>
+          </div>
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Prophetic-Seal.jpeg" alt="Prophetic Seal" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Prophetic Seal</h3><p>Calligraphic signature. Source: Local Gallery</p></div>
+          </div>
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Ramadan-Lanterns.jpeg" alt="Ramadan Lanterns" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Ramadan Lanterns</h3><p>Fanoos lights. Source: Local Gallery</p></div>
+          </div>
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Sultan-Qaboos-Grand-Mosque.jpeg" alt="Sultan Qaboos Grand Mosque" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Sultan Qaboos Grand Mosque</h3><p>Muscat, Oman — interior. Source: Local Gallery</p></div>
+          </div>
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Geometric-Mosque-Dome.jpeg" alt="Geometric Mosque Dome" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Geometric Mosque Dome</h3><p>Intricate arabesque patterns. Source: Local Gallery</p></div>
+          </div>
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Blue-Mosque-Interior.jpeg" alt="Blue Mosque — Interior" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Blue Mosque — Interior</h3><p>Istanbul, Türkiye. Source: Local Gallery</p></div>
+          </div>
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Al-Aqsa-Mosque.jpeg" alt="Al-Aqsa Mosque" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Al-Aqsa Mosque</h3><p>Jerusalem, Palestine. Source: Local Gallery</p></div>
+          </div>
+          <div class="gallery-card">
+            <img src="./assets/images/gallery/Starry-Night-Desert.jpeg" alt="Starry Night Desert" loading="lazy" decoding="async" width="1200" height="880">
+            <div class="caption"><h3>Starry Night Desert</h3><p>Reflection and awe. Source: Local Gallery</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-widgets">
+        <div>
+          <h3>Prayer Times</h3>
+          <div class="prayer-times" id="prayer-times"></div>
+        </div>
+        <div>
+          <h3>Tasbeeh</h3>
+          <div class="tasbeeh">
+            <button id="tasbeeh-inc" aria-label="Increment tasbeeh">+1</button>
+            <button id="tasbeeh-reset" aria-label="Reset tasbeeh">Reset</button>
+            <span id="tasbeeh-count">0</span>
+          </div>
+        </div>
+        <div>
+          <h3>Greeting</h3>
+          <div class="greeting" id="greeting">Assalamu alaikum</div>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="quran.html">Quran & Hadith</a>
+            <a href="articles.html">Articles</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Email: <a class="read-more" href="mailto:contact@noorverse.site">contact@noorverse.site</a></p>
+        </div>
+      </div>
+      <p>© <span id="year"></span> NoorVerse. May peace and blessings be upon you.</p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="./script.js" defer></script>
+</body>
+<!--
+  Images/audio are expected in ./assets. Replace placeholders with your own media.
+-->
+</html>
+
+

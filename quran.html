@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f3d2e">
+  <meta name="description" content="NoorVerse — Quran & Hadith: verses, recitations, hadith search, and reflections.">
+  <title>NoorVerse — Quran & Hadith</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="./assets/images/noorverse-logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/images/noorverse-logo.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NoorVerse">
+  <meta property="og:title" content="NoorVerse — Quran & Hadith">
+  <meta property="og:description" content="Verses, recitations, hadith search, and reflections.">
+  <meta property="og:image" content="./assets/images/noorverse-logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NoorVerse — Quran & Hadith">
+  <meta name="twitter:description" content="Verses, recitations, hadith search, and reflections.">
+  <meta name="twitter:image" content="./assets/images/noorverse-logo.svg">
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <audio id="bg-audio" preload="none" loop>
+    <source src="./assets/audio/soft-recitation.mp3" type="audio/mpeg">
+  </audio>
+
+  <header class="site-header" data-elevate>
+    <div class="container nav-wrap">
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="NoorVerse Home">
+          <img class="brand-logo" src="./assets/images/noorverse-logo.svg" alt="NoorVerse" />
+          <span class="brand-text">NoorVerse</span>
+        </a>
+      </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+      <nav class="nav" id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="quran.html" aria-current="page">Quran & Hadith</a>
+        <a href="articles.html">Articles</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+        <div class="actions">
+          <button class="audio-toggle" id="audio-toggle" aria-pressed="false" aria-label="Toggle background recitation">
+            <span class="icon" aria-hidden="true">🔊</span>
+            <span class="label">Sound</span>
+          </button>
+          <div class="player-controls" aria-label="Recitation playlist controls">
+            <button class="player-btn" id="prev-track" aria-label="Previous track">⏮</button>
+            <button class="player-btn" id="play-pause" aria-label="Play/Pause">▶</button>
+            <button class="player-btn" id="next-track" aria-label="Next track">⏭</button>
+            <span class="track-title" id="track-title"></span>
+          </div>
+          <button class="mode-toggle" id="mode-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌗</button>
+          <button class="player-btn" id="font-dec" aria-label="Decrease font size">A−</button>
+          <button class="player-btn" id="font-inc" aria-label="Increase font size">A+</button>
+        </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="quran" class="section alt">
+      <div class="container">
+        <h2>Quran & Hadith</h2>
+        <div class="card mb-12">
+          <div id="verse-of-day">Loading Verse of the Day…</div>
+        </div>
+        <div class="card mb-12">
+          <label for="hadith-search">Search Hadith</label>
+          <input id="hadith-search" type="search" placeholder="Enter keyword (e.g., mercy)">
+          <div id="hadith-results" class="list mt-8"></div>
+        </div>
+        <div class="grid cards">
+          <article class="card fade-in">
+            <h3 lang="ar" dir="rtl">وَقُل رَّبِّ زِدْنِي عِلْمًا</h3>
+            <p>And say: My Lord, increase me in knowledge. — 20:114</p>
+          </article>
+          <article class="card fade-in">
+            <h3>Hadith</h3>
+            <p>
+              The best among you are those who learn the Quran and teach it. — Bukhari
+            </p>
+          </article>
+          <article class="card fade-in">
+            <h3>Reflection</h3>
+            <p>
+              The Quran descends upon hearts that are attentive, humble, and seeking.
+            </p>
+          </article>
+          <article class="card fade-in">
+            <h3 lang="ar" dir="rtl">أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</h3>
+            <p>Verily, in the remembrance of Allah do hearts find rest. — 13:28</p>
+          </article>
+          <article class="card fade-in">
+            <h3 lang="ar" dir="rtl">إِنَّ اللَّهَ مَعَ الصَّابِرِينَ</h3>
+            <p>Indeed, Allah is with the patient. — 2:153</p>
+          </article>
+          <article class="card fade-in">
+            <h3 lang="ar" dir="rtl">وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ</h3>
+            <p>My success is not but through Allah. — 11:88</p>
+          </article>
+        </div>
+        <div class="card mt-14">
+          <h3>Hadith Selections</h3>
+          <ul class="list">
+            <li>
+              <strong>Intention</strong>: Actions are but by intentions, and every person will get what he intended. — Bukhari & Muslim
+            </li>
+            <li>
+              <strong>Mercy</strong>: The Most Merciful shows mercy to those who are merciful. — Tirmidhi
+            </li>
+            <li>
+              <strong>Character</strong>: The best among you are those best in character. — Bukhari
+            </li>
+            <li>
+              <strong>Neighbor</strong>: He is not a believer whose neighbor is not safe from his harm. — Bukhari
+            </li>
+            <li>
+              <strong>Smile</strong>: Your smile for your brother is a charity. — Tirmidhi
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-widgets">
+        <div>
+          <h3>Prayer Times</h3>
+          <div class="prayer-times" id="prayer-times"></div>
+        </div>
+        <div>
+          <h3>Tasbeeh</h3>
+          <div class="tasbeeh">
+            <button id="tasbeeh-inc" aria-label="Increment tasbeeh">+1</button>
+            <button id="tasbeeh-reset" aria-label="Reset tasbeeh">Reset</button>
+            <span id="tasbeeh-count">0</span>
+          </div>
+        </div>
+        <div>
+          <h3>Greeting</h3>
+          <div class="greeting" id="greeting">Assalamu alaikum</div>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="quran.html">Quran & Hadith</a>
+            <a href="articles.html">Articles</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Email: <a class="read-more" href="mailto:contact@noorverse.site">contact@noorverse.site</a></p>
+        </div>
+      </div>
+      <p>© <span id="year"></span> NoorVerse. May peace and blessings be upon you.</p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="./script.js" defer></script>
+</body>
+<!--
+  Images/audio are expected in ./assets. Replace placeholders with your own media.
+-->
+</html>
+
+

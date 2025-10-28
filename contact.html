@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f3d2e">
+  <meta name="description" content="NoorVerse — Contact & Dua: send your prayer or message.">
+  <title>NoorVerse — Contact</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="./assets/images/noorverse-logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/images/noorverse-logo.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NoorVerse">
+  <meta property="og:title" content="NoorVerse — Contact">
+  <meta property="og:description" content="Contact NoorVerse and send a Dua request.">
+  <meta property="og:image" content="./assets/images/noorverse-logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NoorVerse — Contact">
+  <meta name="twitter:description" content="Contact NoorVerse and send a Dua request.">
+  <meta name="twitter:image" content="./assets/images/noorverse-logo.svg">
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <audio id="bg-audio" preload="none" loop>
+    <source src="./assets/audio/soft-recitation.mp3" type="audio/mpeg">
+  </audio>
+
+  <header class="site-header" data-elevate>
+    <div class="container nav-wrap">
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="NoorVerse Home">
+          <img class="brand-logo" src="./assets/images/noorverse-logo.svg" alt="NoorVerse" />
+          <span class="brand-text">NoorVerse</span>
+        </a>
+      </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+      <nav class="nav" id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="quran.html">Quran & Hadith</a>
+        <a href="articles.html">Articles</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+        <div class="actions">
+          <button class="audio-toggle" id="audio-toggle" aria-pressed="false" aria-label="Toggle background recitation">
+            <span class="icon" aria-hidden="true">🔊</span>
+            <span class="label">Sound</span>
+          </button>
+          <div class="player-controls" aria-label="Recitation playlist controls">
+            <button class="player-btn" id="prev-track" aria-label="Previous track">⏮</button>
+            <button class="player-btn" id="play-pause" aria-label="Play/Pause">▶</button>
+            <button class="player-btn" id="next-track" aria-label="Next track">⏭</button>
+            <span class="track-title" id="track-title"></span>
+          </div>
+          <button class="mode-toggle" id="mode-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌗</button>
+          <button class="player-btn" id="font-dec" aria-label="Decrease font size">A−</button>
+          <button class="player-btn" id="font-inc" aria-label="Increase font size">A+</button>
+        </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <form id="contactForm" class="contact-form" action="#" method="post" onsubmit="sendMail(event)" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Assalamu alaikum..." required></textarea>
+          </div>
+          <div class="form-row">
+            <label for="dua">Dua Request</label>
+            <textarea id="dua" name="dua" rows="3" placeholder="Enter your dua request (optional)"></textarea>
+          </div>
+          <!-- Honeypot anti-spam field (must stay empty) -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="hp_field" type="text" tabindex="-1" autocomplete="off" placeholder="Leave this field empty">
+          </div>
+          <!-- Optional: Google reCAPTCHA v2 widget placeholder (see README.md to enable) -->
+          <!-- <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div> -->
+          <div class="form-actions">
+            <button class="cta" type="submit">Send</button>
+            <small id="form-help">We will email to <strong>msinanasadi@gmail.com</strong>.</small>
+          </div>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-widgets">
+        <div>
+          <h3>Prayer Times</h3>
+          <div class="prayer-times" id="prayer-times"></div>
+        </div>
+        <div>
+          <h3>Tasbeeh</h3>
+          <div class="tasbeeh">
+            <button id="tasbeeh-inc" aria-label="Increment tasbeeh">+1</button>
+            <button id="tasbeeh-reset" aria-label="Reset tasbeeh">Reset</button>
+            <span id="tasbeeh-count">0</span>
+          </div>
+        </div>
+        <div>
+          <h3>Greeting</h3>
+          <div class="greeting" id="greeting">Assalamu alaikum</div>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="quran.html">Quran & Hadith</a>
+            <a href="articles.html">Articles</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Email: <a class="read-more" href="mailto:contact@noorverse.site">contact@noorverse.site</a></p>
+        </div>
+      </div>
+      <p>© <span id="year"></span> NoorVerse. May peace and blessings be upon you.</p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" aria-label="Back to top">↑</button>
+
+  <!-- EmailJS CDN and page-specific script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="./js/contact.js" defer></script>
+  <script src="./script.js" defer></script>
+</body>
+<!--
+  Images/audio are expected in ./assets. Replace placeholders with your own media.
+-->
+</html>
+
+

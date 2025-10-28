@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="NoorVerse logo">
+  <defs>
+    <linearGradient id="copper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C08457"/>
+      <stop offset="100%" stop-color="#E9B171"/>
+    </linearGradient>
+    <linearGradient id="aqua" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7DE2D1"/>
+      <stop offset="100%" stop-color="#5ad7c6"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="256" height="256" rx="28" fill="#071E22"/>
+  <!-- Crescent -->
+  <g transform="translate(36,36)">
+    <path d="M120,92c0,50.3-40.7,91-91,91c-7.2,0-14.2-0.85-20.9-2.45C40.6,206.3,84.5,224,132,206C173,190.8,202,154,202,111 C202,68,173,31.2,132,16c14.7,22.2,23,48.5,23,76z" fill="url(#copper)" opacity="0.95"/>
+    <!-- Star -->
+    <path d="M140 60 l8 16 18 3 -13 12 3 18 -16 -8 -16 8 3 -18 -13 -12 18 -3z" fill="url(#aqua)" filter="url(#glow)"/>
+  </g>
+  <!-- Wordmark -->
+  <g transform="translate(20,208)">
+    <text x="0" y="0" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="36" fill="#E9B171" letter-spacing="1">Noor</text>
+    <text x="118" y="0" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="36" fill="#7DE2D1">Verse</text>
+  </g>
+</svg>

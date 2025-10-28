@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f3d2e">
+  <meta name="description" content="NoorVerse — an elegant Islamic website sharing Quran, Hadith, articles, and a serene gallery.">
+  <title>NoorVerse — Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="./assets/images/noorverse-logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/images/noorverse-logo.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NoorVerse">
+  <meta property="og:title" content="NoorVerse — Home">
+  <meta property="og:description" content="An elegant Islamic website sharing Quran, Hadith, articles, and a serene gallery.">
+  <meta property="og:image" content="./assets/images/noorverse-logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NoorVerse — Home">
+  <meta name="twitter:description" content="An elegant Islamic website sharing Quran, Hadith, articles, and a serene gallery.">
+  <meta name="twitter:image" content="./assets/images/noorverse-logo.svg">
+
+  <link rel="stylesheet" href="./styles.css">
+</head> 
+<body>
+  <audio id="bg-audio" preload="none" loop>
+    <source src="./assets/audio/soft-recitation.mp3" type="audio/mpeg">
+  </audio>
+
+  <header class="site-header" data-elevate>
+    <div class="container nav-wrap">
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="NoorVerse Home">
+          <img class="brand-logo" src="./assets/images/noorverse-logo.svg" alt="NoorVerse">
+          <span class="brand-text">NoorVerse</span>
+        </a>
+      </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+      <nav class="nav" id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="quran.html">Quran & Hadith</a>
+        <a href="articles.html">Articles</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="actions">
+        <button class="audio-toggle" id="audio-toggle" aria-pressed="false" aria-label="Toggle background recitation">
+          <span class="icon" aria-hidden="true">🔊</span>
+          <span class="label">Sound</span>
+        </button>
+        <div class="player-controls" aria-label="Recitation playlist controls">
+          <button class="player-btn" id="prev-track" aria-label="Previous track">⏮</button>
+          <button class="player-btn" id="play-pause" aria-label="Play/Pause">▶</button>
+          <button class="player-btn" id="next-track" aria-label="Next track">⏭</button>
+          <span class="track-title" id="track-title"></span>
+        </div>
+        <button class="mode-toggle" id="mode-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌗</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <canvas class="particles" id="particles"></canvas>
+      <div class="container hero-inner">
+        <h1 class="headline">In the Light of Allah, Hearts Find Peace.</h1>
+        <p class="subhead">A spiritual journey through Quran, Sunnah, and the beauty of Islam — brought to life through sound, motion, and serenity.</p>
+        <p class="basmala" lang="ar" dir="rtl">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيم</p>
+        <h1 class="ayah" id="rotating-ayah" lang="ar" dir="rtl"></h1>
+        <p class="ayah-trans" id="ayah-trans"></p>
+        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;" class="mt-10">
+          <a href="quran.html" class="cta">🕋 Read Quran & Hadith</a>
+          <a href="about.html" class="cta" style="background:linear-gradient(135deg, var(--copper-500), var(--copper-300));">🌙 Begin Your Journey</a>
+        </div>
+        <div class="mt-10" style="color: var(--aqua-400); opacity:.95;">Turn on recitation for a peaceful experience 🎧</div>
+      </div>
+      <div style="position:absolute; bottom:12px; left:50%; transform:translateX(-50%); color:var(--aqua-400); opacity:.9; display:grid; place-items:center; gap:6px;">
+        <div style="width:12px; height:12px; border-radius:50%; background:linear-gradient(135deg, var(--copper-500), var(--copper-300)); box-shadow:0 0 10px rgba(233,177,113,.35), 0 0 6px rgba(125,226,209,.25); animation: greet 2.2s ease-in-out infinite;"></div>
+        <small>Scroll down</small>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Our Mission — To Spread Light, Knowledge, and Peace</h2>
+        <p>From the first revelation in the cave of Hira to today’s global Ummah, Islam continues to guide hearts toward truth. This platform is built for seekers, students, and believers who wish to live with purpose and remembrance of Allah.</p>
+        <div class="grid cards mt-12">
+          <article class="card"><h3>🕊 Faith (Iman)</h3><p>Rooted in belief and trust in Allah.</p></article>
+          <article class="card"><h3>📖 Knowledge (Ilm)</h3><p>Learning, teaching, and sharing truth.</p></article>
+          <article class="card"><h3>❤️ Unity (Ummah)</h3><p>One heart, one nation, one peace.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>The Eternal Words of Guidance</h2>
+        <p>Read, listen, and reflect on the verses and sayings that shaped the hearts of believers across generations.</p>
+        <ul class="list mt-12">
+          <li>🌤 <strong>Verse of the Day</strong> — refreshes daily with translation.</li>
+          <li>🎧 <strong>Recite with a Qari</strong> — listen to the Quran in beautiful voices.</li>
+          <li>💬 <strong>Hadith Carousel</strong> — swipe through prophetic wisdom.</li>
+        </ul>
+        <div class="mt-14"><a class="cta" href="quran.html">Open Quran & Hadith</a></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Inspiration for Every Heart</h2>
+        <p>From the Seerah of the Prophet ﷺ to the lives of his companions — discover the timeless lessons that guide our everyday life.</p>
+        <div class="grid cards mt-12">
+          <article class="card"><h3>🌿 Seerah</h3></article>
+          <article class="card"><h3>✨ Companions</h3></article>
+          <article class="card"><h3>☀️ Daily Life</h3></article>
+          <article class="card"><h3>🌸 Youth Inspiration</h3></article>
+        </div>
+        <p class="mt-12">Every article is a reflection of light — may it reach your heart with peace.</p>
+        <div class="mt-8"><a class="cta" href="articles.html">Explore Articles</a></div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <h2>The Beauty of Faith in Every Frame</h2>
+        <p>Mosques, calligraphy, and sacred moments captured through the lens of peace.</p>
+        <p style="opacity:.9;" class="mt-12">Click to explore — feel the light, see the art, remember Allah.</p>
+        <div class="mt-10"><a class="cta" href="gallery.html">Open Gallery</a></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Send Your Dua — or Ask for Guidance</h2>
+        <p>No dua is too small. Share your prayer request or message. Together, we say Ameen.</p>
+        <div class="grid cards mt-12">
+          <article class="card"><h3>📩 Contact Form</h3><p>Write to us for feedback or collaboration.</p></article>
+          <article class="card"><h3>🤍 Dua Form</h3><p>Submit a prayer for yourself or a loved one.</p></article>
+        </div>
+        <div class="mt-10"><a class="cta" href="contact.html">Go to Contact & Dua</a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-widgets">
+        <div>
+          <h3>Prayer Times</h3>
+          <div class="prayer-times" id="prayer-times"></div>
+        </div>
+        <div>
+          <h3>Tasbeeh</h3>
+          <div class="tasbeeh">
+            <button id="tasbeeh-inc" aria-label="Increment tasbeeh">+1</button>
+            <button id="tasbeeh-reset" aria-label="Reset tasbeeh">Reset</button>
+            <span id="tasbeeh-count">0</span>
+          </div>
+        </div>
+        <div>
+          <h3>Greeting</h3>
+          <div class="greeting" id="greeting">Assalamu alaikum</div>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="quran.html">Quran & Hadith</a>
+            <a href="articles.html">Articles</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Email: <a class="read-more" href="mailto:contact@noorverse.site">contact@noorverse.site</a></p>
+        </div>
+      </div>
+      <p>© <span id="year"></span> NoorVerse. May peace and blessings be upon you.</p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="./script.js" defer></script>
+</body>
+<!--
+  Images/audio are expected in ./assets. Replace placeholders with your own media.
+-->
+</html>
+
+

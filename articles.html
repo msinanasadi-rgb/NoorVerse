@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f3d2e">
+  <meta name="description" content="NoorVerse — Islamic articles and reflections for heart and mind.">
+  <title>NoorVerse — Articles</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="./assets/images/noorverse-logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/images/noorverse-logo.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NoorVerse">
+  <meta property="og:title" content="NoorVerse — Articles">
+  <meta property="og:description" content="Islamic articles and reflections for heart and mind.">
+  <meta property="og:image" content="./assets/images/noorverse-logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NoorVerse — Articles">
+  <meta name="twitter:description" content="Islamic articles and reflections for heart and mind.">
+  <meta name="twitter:image" content="./assets/images/noorverse-logo.svg">
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <audio id="bg-audio" preload="none" loop>
+    <source src="./assets/audio/soft-recitation.mp3" type="audio/mpeg">
+  </audio>
+
+  <header class="site-header" data-elevate>
+    <div class="container nav-wrap">
+      <div class="brand">
+        <a href="index.html" class="brand-link" aria-label="NoorVerse Home">
+          <img class="brand-logo" src="./assets/images/noorverse-logo.svg" alt="NoorVerse" />
+          <span class="brand-text">NoorVerse</span>
+        </a>
+      </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+      <nav class="nav" id="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="quran.html">Quran & Hadith</a>
+        <a href="articles.html" aria-current="page">Articles</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+        <div class="actions">
+          <button class="audio-toggle" id="audio-toggle" aria-pressed="false" aria-label="Toggle background recitation">
+            <span class="icon" aria-hidden="true">🔊</span>
+            <span class="label">Sound</span>
+          </button>
+          <div class="player-controls" aria-label="Recitation playlist controls">
+            <button class="player-btn" id="prev-track" aria-label="Previous track">⏮</button>
+            <button class="player-btn" id="play-pause" aria-label="Play/Pause">▶</button>
+            <button class="player-btn" id="next-track" aria-label="Next track">⏭</button>
+            <span class="track-title" id="track-title"></span>
+          </div>
+          <button class="mode-toggle" id="mode-toggle" aria-pressed="false" aria-label="Toggle dark mode">🌗</button>
+        </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="articles" class="section">
+      <div class="container">
+        <h2>Islamic Articles</h2>
+        <div class="list">
+          <article class="list-item">
+            <h3>Mercy of the Prophet ﷺ</h3>
+            <p>Exploring the compassion and character of Muhammad ﷺ and its relevance today.</p>
+            <a class="read-more" href="#">Read</a>
+          </article>
+          <article class="list-item">
+            <h3>Companions: Models of Faith</h3>
+            <p>Short reflections on the steadfastness and wisdom of the Sahaba.</p>
+            <a class="read-more" href="#">Read</a>
+          </article>
+          <article class="list-item">
+            <h3>Purification of the Heart</h3>
+            <p>Practical steps toward sincerity, gratitude, and contentment.</p>
+            <a class="read-more" href="#">Read</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-widgets">
+        <div>
+          <h3>Prayer Times</h3>
+          <div class="prayer-times" id="prayer-times"></div>
+        </div>
+        <div>
+          <h3>Tasbeeh</h3>
+          <div class="tasbeeh">
+            <button id="tasbeeh-inc" aria-label="Increment tasbeeh">+1</button>
+            <button id="tasbeeh-reset" aria-label="Reset tasbeeh">Reset</button>
+            <span id="tasbeeh-count">0</span>
+          </div>
+        </div>
+        <div>
+          <h3>Greeting</h3>
+          <div class="greeting" id="greeting">Assalamu alaikum</div>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="quran.html">Quran & Hadith</a>
+            <a href="articles.html">Articles</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Email: <a class="read-more" href="mailto:contact@noorverse.site">contact@noorverse.site</a></p>
+        </div>
+      </div>
+      <p>© <span id="year"></span> NoorVerse. May peace and blessings be upon you.</p>
+    </div>
+  </footer>
+
+  <button id="to-top" class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="./script.js" defer></script>
+</body>
+<!--
+  Images/audio are expected in ./assets. Replace placeholders with your own media.
+-->
+</html>
+
+
