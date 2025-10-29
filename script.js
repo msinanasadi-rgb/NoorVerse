@@ -1,5 +1,6 @@
 // Initialize year
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // Intersection Observer for fade-ins
 const observer = new IntersectionObserver((entries) => {
@@ -42,11 +43,13 @@ attachImageFallbacks();
 
 // Back to top visibility
 const toTopButton = document.getElementById('to-top');
-window.addEventListener('scroll', () => {
-  const show = window.scrollY > 400;
-  toTopButton.classList.toggle('visible', show);
-});
-toTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+if (toTopButton) {
+  window.addEventListener('scroll', () => {
+    const show = window.scrollY > 400;
+    toTopButton.classList.toggle('visible', show);
+  });
+  toTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
 
 // Background audio playlist control (user-initiated only)
 const audioEl = document.getElementById('bg-audio');
@@ -64,21 +67,26 @@ const playlist = [
 let currentTrack = 0;
 
 function loadTrack(index) {
+  if (!audioEl) return;
   const t = playlist[index];
   if (!t) return;
   audioEl.src = t.src;
-  trackTitle.textContent = t.title;
+  if (trackTitle) trackTitle.textContent = t.title;
 }
 
 function updateAudioUi() {
+  if (!audioToggle) return;
   audioToggle.setAttribute('aria-pressed', String(audioEnabled));
-  audioToggle.querySelector('.icon').textContent = audioEnabled ? '🔈' : '🔊';
-  playPauseBtn.textContent = audioEnabled ? '⏸' : '▶';
+  const icon = audioToggle.querySelector('.icon');
+  if (icon) icon.textContent = audioEnabled ? '🔈' : '🔊';
+  if (playPauseBtn) playPauseBtn.textContent = audioEnabled ? '⏸' : '▶';
 }
 
-loadTrack(currentTrack);
+if (audioEl) {
+  loadTrack(currentTrack);
+}
 
-audioToggle.addEventListener('click', async () => {
+audioToggle && audioEl && audioToggle.addEventListener('click', async () => {
   try {
     if (!audioEnabled) {
       await audioEl.play();
@@ -89,51 +97,54 @@ audioToggle.addEventListener('click', async () => {
     }
   } catch (e) {
     console.warn('Audio toggle failed', e);
+    audioEnabled = false;
   } finally {
     updateAudioUi();
   }
 });
 
-playPauseBtn && playPauseBtn.addEventListener('click', async () => {
+playPauseBtn && audioEl && playPauseBtn.addEventListener('click', async () => {
   try {
-    if (!audioEnabled) {
-      await audioEl.play();
-      audioEnabled = true;
-    } else if (audioEl.paused) {
+    if (!audioEnabled || audioEl.paused) {
       await audioEl.play();
       audioEnabled = true;
     } else {
       audioEl.pause();
       audioEnabled = false;
     }
+  } catch (e) {
+    console.warn('Play/Pause failed', e);
+    audioEnabled = false;
   } finally {
     updateAudioUi();
   }
 });
 
-prevBtn && prevBtn.addEventListener('click', async () => {
+prevBtn && audioEl && prevBtn.addEventListener('click', async () => {
   currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
   loadTrack(currentTrack);
-  if (audioEnabled) await audioEl.play();
+  try { if (audioEnabled) await audioEl.play(); } catch {}
   updateAudioUi();
 });
 
-nextBtn && nextBtn.addEventListener('click', async () => {
+nextBtn && audioEl && nextBtn.addEventListener('click', async () => {
   currentTrack = (currentTrack + 1) % playlist.length;
   loadTrack(currentTrack);
-  if (audioEnabled) await audioEl.play();
+  try { if (audioEnabled) await audioEl.play(); } catch {}
   updateAudioUi();
 });
 
 // Elevate header on scroll
 const header = document.querySelector('.site-header');
 let lastY = 0;
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  const elevate = y > 10;
-  header.style.boxShadow = elevate ? '0 6px 20px rgba(0,0,0,.25)' : 'none';
-  lastY = y;
-});
+if (header) {
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    const elevate = y > 10;
+    header.style.boxShadow = elevate ? '0 6px 20px rgba(0,0,0,.25)' : 'none';
+    lastY = y;
+  });
+}
 
 // Dark mode toggle
 const modeToggle = document.getElementById('mode-toggle');
